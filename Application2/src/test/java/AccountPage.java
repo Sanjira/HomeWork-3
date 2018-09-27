@@ -12,5 +12,7 @@ public class AccountPage extends JPBase {
     @Test
     public void testSearchProduct() throws InterruptedException{
         productSearch();
+
+        //for practice
     }
 }

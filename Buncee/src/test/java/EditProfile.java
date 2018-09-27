@@ -2,7 +2,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-// Homework -3
+//Homework -3
 public class EditProfile extends SubBase {
 
     public EditProfile() throws IOException { }

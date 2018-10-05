@@ -18,12 +18,15 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,7 +47,7 @@ public class Base {
     @BeforeMethod
     public void setUp(boolean useSauceLab, String userName, String key, String appUrl, String os, String browserName, String browserVersion) throws IOException {
         if (useSauceLab == true) {
-            //getSauceLabDriver(userName, key, os, browserName, browserVersion);
+            getSauceLabDriver(userName, key, os, browserName, browserVersion);
         } else {
             getLocalDriver(os, browserName);
         }
@@ -81,6 +84,23 @@ public class Base {
         }
         return driver;
         }
+
+
+    //get cloud driver
+    public WebDriver getSauceLabDriver(String userName, String key, String os, String browserName,
+                                       String browserVersion )throws IOException{
+
+        DesiredCapabilities cap = new DesiredCapabilities();
+        cap.setCapability("platform", os);
+        cap.setBrowserName(browserName);
+        cap.setCapability("version", browserVersion);
+
+        driver = new RemoteWebDriver(new URL("http://"+ userName + ":" +  key +
+                "@ondemand.saucelabs.com:80/wd/hub"), cap);
+        return driver;
+
+    }
+
 
     public void clickByXpath(String xpath) throws InterruptedException{
         Thread.sleep(3000);

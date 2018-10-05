@@ -1,0 +1,11 @@
+pageobject\AboutUsPage.class
+pageobject\CartPage.class
+pageobject\HomePage.class
+pageobject\ProductDetailPage.class
+pageobject\AccountPage.class
+pageobject\ViewProfile.class
+pageobject\ProductListingPage.class
+pageobject\CheckoutPage.class
+SubBase.class
+pageobject\AddressList.class
+pageobject\LiveChatPage.class

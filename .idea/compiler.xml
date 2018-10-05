@@ -9,9 +9,11 @@
         <module name="Application" />
         <module name="Application2" />
         <module name="Buncee" />
-        <module name="FinalScore" />
         <module name="Generic" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FinalScore" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

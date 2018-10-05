@@ -3,21 +3,21 @@
 <suite name="Buncee App is running on Chrome Browser">
 
     <parameter name="useSauceLab" value="false"/>
-    <parameter name="userName" value="mdalam"/>
-    <parameter name="key" value="662b4ed7-1a59-4ab2-ae8c-2dfe1e32f4aa"/>
+    <parameter name="userName" value="sanjira"/>
+    <parameter name="key" value="cb22f426-3d7e-4fb3-9e9d-8c5d4f66563d"/>
     <parameter name="appUrl" value="https://app.edu.buncee.com/"/>
     <parameter name="os" value="mac"/>
     <parameter name="browserName" value="chrome"/>
-    <parameter name="browserVersion" value="45.0.2454.93"/>
+    <parameter name="browserVersion" value="65"/>
 
     <test name="Home Page">
         <classes>
             <!--&lt;!&ndash;<class name="SignupTest"/>-->
 
-            <!--<class name="AccountFeature"/>-->
+            <class name="AccountFeature"/>
 
-            <class name="EditProfile"/>
-            <class name="AddressBook"/>
+            <!--<class name="EditProfile"/>-->
+            <!--<class name="AddressBook"/>-->
             <!--<class name="Support"/>-->
 
         </classes>

@@ -11,14 +11,13 @@
     <modules>
         <module>Generic</module>
         <module>Application</module>
-        <module>Buncee</module>
-        <module>Final-Score</module>
         <module>Application2</module>
+
+        <module>Buncee</module>
     </modules>
 
 
     <dependencyManagement>
-
         <dependencies>
 
 
@@ -30,6 +29,7 @@
             </dependency>
 
 
+
             <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
             <dependency>
                 <groupId>org.seleniumhq.selenium</groupId>
@@ -38,12 +38,14 @@
             </dependency>
 
 
+
             <!-- https://mvnrepository.com/artifact/org.testng/testng -->
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>6.14.3</version>
             </dependency>
+
 
 
 
@@ -56,9 +58,27 @@
 
 
         </dependencies>
+    </dependencyManagement>
 
-   </dependencyManagement>
+
+    <profiles>
+        <profile>
+            <id>all</id>
+            <modules>
+                <module>Generic</module>
+                <module>Application</module>
+            </modules>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+    </profiles>
 
 
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
 
 </project>
